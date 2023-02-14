@@ -1,0 +1,97 @@
+.header{
+    height: 10vh;
+    display: flex;
+    background-color: var(--color1);
+    padding: 0px;
+}
+.spacer{
+    flex-grow: 1;
+}
+.nav-link{
+    width: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    width: 20vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    text-decoration: line-through;
+}
+.theme-control{
+    width: 7vh;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.themes{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+.theme-btn{
+    width: 100%;
+    height: 25%;
+    border: 0px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition-duration: 300ms
+}
+.theme-btn:hover{
+    width: 90%;
+}
+a mat-icon{
+    display: flex;
+    height: 100%;
+    font-size: 1.6em;
+    align-items: center;
+    justify-content: center;
+    color: var(--color2);
+    width: 6vh;
+}
+.dark{
+    background-color: rgb(70, 70, 70);
+}
+.dark:hover{
+    background-color: rgb(49, 49, 49);
+    transition-duration: 500ms;
+}
+
+.light{
+    background-color: rgb(255, 255, 255);
+}
+.light:hover{
+    background-color: rgb(190, 190, 190);
+    transition-duration: 500ms;
+}
+
+.indigo{
+    background-color: #BFDB38;
+}
+.indigo:hover{
+    background-color: #a0b82d;
+    transition-duration: 500ms;
+}
+
+.tropic{
+    background-color: #6ECCAF;
+}
+.tropic:hover{
+    background-color: #569e87;
+    transition-duration: 500ms;
+}
+
+
+
+
+a{
+    color: var(--color2);
+    text-transform: uppercase;
+}
