@@ -1,0 +1,55 @@
+.main{
+    min-height: 75vh;
+    background-color: var(--color2);
+    padding: 2px;
+}
+.post{
+    margin: 2px;
+    padding: 5px;
+    border: 1px solid var(--color1);
+    border-radius: 5px;
+    background-color: var(--color1);
+}
+a{
+    color: var(--color2);
+}
+
+
+
+
+
+
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.img{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-size: contain;
+    border-radius: 90px;
+}
+.likes, .info, .comments{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info{
+    width: 20%;
+}
+.title{
+    font-size: 1.7em;
+    text-transform: uppercase;
+    margin: 0px 10px 0px 10px;
+}
+.article{
+    margin: 10px;
+}
+.short-info{
+    display: flex;
+    width: 10vh;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -58,6 +58,7 @@ a mat-icon{
 }
 .dark{
     background-color: rgb(70, 70, 70);
+    transition-duration: 500ms;
 }
 .dark:hover{
     background-color: rgb(49, 49, 49);
@@ -66,6 +67,7 @@ a mat-icon{
 
 .light{
     background-color: rgb(255, 255, 255);
+    transition-duration: 500ms;
 }
 .light:hover{
     background-color: rgb(190, 190, 190);
@@ -73,18 +75,20 @@ a mat-icon{
 }
 
 .indigo{
-    background-color: #BFDB38;
+    background-color: #cf082a;
+    transition-duration: 500ms;
 }
 .indigo:hover{
-    background-color: #a0b82d;
+    background-color: #99001a;
     transition-duration: 500ms;
 }
 
 .tropic{
-    background-color: #6ECCAF;
+    background-color: #F2AA4CFF;
+    transition-duration: 500ms;
 }
 .tropic:hover{
-    background-color: #569e87;
+    background-color: rgb(184, 114, 23);
     transition-duration: 500ms;
 }
 

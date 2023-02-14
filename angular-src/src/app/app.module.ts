@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { SearchComponent } from './components/parts/search/search.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     NewsComponent,
     AddPostComponent,
     ErrorComponent,
-    ProfileComponent
+    ProfileComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

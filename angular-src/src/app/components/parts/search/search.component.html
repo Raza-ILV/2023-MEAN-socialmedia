@@ -1,0 +1,6 @@
+<div class="main">
+    <input #s type="text" (keyup.enter)="find(s.value)" [value]="search">
+    <button (click)="find(s.value)">
+        <mat-icon>search</mat-icon>
+    </button>
+</div>

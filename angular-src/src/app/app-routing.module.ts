@@ -8,6 +8,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 const routes: Routes = [
   {path: "", redirectTo: "home", pathMatch: "full"},
   {path: "home", component: HomeComponent},
+  {path: "search/:search", component:NewsComponent},
   {path: "news", component: NewsComponent},
   {path: "add-post", component: AddPostComponent},
   {path: "profile", component: ProfileComponent},

@@ -1,1 +1,31 @@
-<p>news works!</p>
+<div class="main">
+    <app-search></app-search>
+    <div class="post" *ngFor="let post of news">
+        <a routerLink="/news/{{post.id}}">
+            <div class="body">
+                <p class="title">{{post.title}}</p>
+                <p class="article">{{post.article}}</p>
+            </div>
+            <div class="bottom">
+                <div class="info">
+                    <div 
+                        class="img"
+                        style="background-image: url({{post.authorImage}});" 
+                    ></div>
+                    <p class="author">{{post.authorName}}</p>
+                </div>
+                <div class="short-info">
+                    <div class="comments">
+                        <mat-icon>comment</mat-icon>
+                        <p class="likes">{{post.commentsCount}}</p>
+                    </div>
+                    <div class="likes">
+                        <mat-icon>favorite</mat-icon>
+                        <p class="likes">{{post.likes}}</p>
+                    </div>
+                </div>
+
+            </div>
+        </a>   
+    </div>
+</div>
