@@ -1,0 +1,20 @@
+<header class="header">
+    <a routerLink="/home" class="logo">s|e|n|d</a>
+    <div class="spacer"></div>
+    <a href="https://github.com/Raza-ILV/MEAN-Stack-SocialMedia" class="nav-link">github</a>
+    <a routerLink="/users/auth" class="nav-link" *ngIf="!loggedIn">log in</a>
+    <a routerLink="/users/register" class="nav-link" *ngIf="!loggedIn">register</a>
+    <a routerLink="/users/profile" class="nav-link" *ngIf="loggedIn">profile</a>
+    <a routerLink="/news/add-post" class="nav-link" *ngIf="loggedIn">add post</a>
+    <a routerLink="/news" class="nav-link news-btn" *ngIf="loggedIn">news</a>
+    <a routerLink="/news" class="nav-link" *ngIf="loggedIn">log out</a>
+    <div class="theme-control">
+        <a (click)="showThemes()" *ngIf="!themes"><mat-icon>brightness_medium</mat-icon></a>
+        <div class="themes" *ngIf="themes">
+            <button class="theme-btn dark" (click)="setTheme('dark')"></button>
+            <button class="theme-btn light" (click)="setTheme('light')"></button>
+            <button class="theme-btn indigo" (click)="setTheme('wine')"></button>
+            <button class="theme-btn tropic" (click)="setTheme('gold')"></button> 
+        </div>
+    </div>
+</header>

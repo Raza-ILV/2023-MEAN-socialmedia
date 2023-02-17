@@ -1,0 +1,28 @@
+<div class="main">
+    <div class="img"
+        style="background-image: url({{post.postImage}});">
+    </div>
+    <p class="title">{{post.title}}</p>
+    <p class="author">by {{post.authorName}}</p>
+    <p class="article">{{post.article}}</p>
+    <div class="info">
+        <a class="comments">
+            <p>Comments</p>
+            <mat-icon>comments</mat-icon>
+        </a>
+        <a class="likes">
+            <p>Likes</p>
+            <mat-icon>favorite</mat-icon>
+        </a>
+    </div>
+    <div class="divider"></div>
+    <div *ngFor="let comment of post.comments" class="com">
+        <div class="comment-img" style="background-image: url({{comment[1]}});"></div>
+        <p class="comment-name">{{comment[0]}}:</p>
+        <p class="comment-article">{{comment[2]}}</p>
+    </div>
+    <p class="leave-comment">Leave your comment:</p>
+    <div class="add-comment">
+        <textarea></textarea>
+    </div>
+</div>
