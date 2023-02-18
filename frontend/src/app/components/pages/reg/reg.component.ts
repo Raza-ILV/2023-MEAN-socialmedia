@@ -1,13 +1,40 @@
-import { Component } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { ValidationService } from 'src/app/services/validation.service';
+
 
 @Component({
   selector: 'app-reg',
   templateUrl: './reg.component.html',
   styleUrls: ['./reg.component.scss']
 })
-export class RegComponent {
+export class RegComponent implements OnInit{
+  constructor(private validate: ValidationService){}
+
   username:string
   password:string
-  imageURL:string ="https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80"
+  imageURL:string
+  imageIsEmpty:boolean = true
+
+  ngOnInit(){
+  }
+  inputChange(){
+    if(this.imageURL == null || this.imageURL.trim() == ""){
+      console.log('s')
+      this.imageIsEmpty = true
+    } else {
+      this.imageIsEmpty = false
+    }
+  }
+  submit(){
+    const user = {
+      username: this.username,
+      password: this.password,
+      imageURL: this.imageURL || "../../../assets/user.png"
+    }
+    if(!this.validate.validateRegister(user)){
+      console.log("Fill all of the fields")
+      //make beautifull later
+      alert("Fill all of the fields")
+    }
+  }
 }

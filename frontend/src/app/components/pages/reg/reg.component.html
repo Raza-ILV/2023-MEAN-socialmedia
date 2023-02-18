@@ -1,19 +1,39 @@
 <div class="main">
-    <p class="welcome">Welcome!</p>
-    <p class="welcome">Add your account please</p>
-    <div class="pre-img" style="background-image: url({{imageURL}});"></div>
-    <form>
-        <div class="form-group">
-           <label>Name</label> 
-           <input type="text">
-        </div>
-        <div class="form-group">
-            <label>Password</label> 
-            <input type="text">
-         </div>
-         <div class="form-group">
-            <label>ImageURL</label> 
-            <input type="text">
-         </div>        
+   <p class="welcome">Welcome!</p>
+   <p class="welcome">Create your account please</p>
+   <div 
+      class="pre-img"
+      style="background-image: url({{imageURL}});"
+      *ngIf="!imageIsEmpty"
+      ></div>
+   <form (submit)="submit()">
+      <div class="form-group">
+         <label>Name</label> 
+         <input 
+            type="text" 
+            [(ngModel)]="username" 
+            name="username"
+            placeholder="Username...">
+      </div>
+      <div class="form-group">
+         <label>Password</label> 
+         <input 
+            type="password" 
+            [(ngModel)]="password" 
+            name="password" 
+            autocomplete="on"
+            placeholder="Password... (4-16 symbols)">
+      </div>
+      <div class="form-group">
+         <label>ImageURL</label> 
+         <input 
+            type="text" 
+            [(ngModel)]="imageURL" 
+            name="imageURL" 
+            placeholder="User picture... (Optional)"
+            (ngModelChange)="inputChange()"
+            >
+      </div>
+      <button type="submit">create account</button> 
     </form>
 </div>

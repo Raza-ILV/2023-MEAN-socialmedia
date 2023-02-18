@@ -8,8 +8,8 @@
     <a routerLink="/news/add-post" class="nav-link" *ngIf="loggedIn">add post</a>
     <a routerLink="/news" class="nav-link news-btn" *ngIf="loggedIn">news</a>
     <a routerLink="/news" class="nav-link" *ngIf="loggedIn">log out</a>
-    <div class="theme-control">
-        <a (click)="showThemes()" *ngIf="!themes"><mat-icon>brightness_medium</mat-icon></a>
+    <div class="theme-control" (click)="showThemes()">
+        <a *ngIf="!themes"><mat-icon>brightness_medium</mat-icon></a>
         <div class="themes" *ngIf="themes">
             <button class="theme-btn dark" (click)="setTheme('dark')"></button>
             <button class="theme-btn light" (click)="setTheme('light')"></button>

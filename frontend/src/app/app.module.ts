@@ -21,6 +21,7 @@ import { PostComponent } from './components/pages/post/post.component';
 import { AuthComponent } from './components/pages/auth/auth.component';
 import { RegComponent } from './components/pages/reg/reg.component';
 import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MatCardModule } from '@angular/material/card';
     MatTooltipModule,
     MatButtonModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
