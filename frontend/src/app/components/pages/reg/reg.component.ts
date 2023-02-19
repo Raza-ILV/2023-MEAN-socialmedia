@@ -19,7 +19,6 @@ export class RegComponent implements OnInit{
   }
   inputChange(){
     if(this.imageURL == null || this.imageURL.trim() == ""){
-      console.log('s')
       this.imageIsEmpty = true
     } else {
       this.imageIsEmpty = false

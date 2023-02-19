@@ -1,7 +1,14 @@
 <div class="main">
     <div class="img"
-        style="background-image: url({{post.postImage}});">
+        style="background-image: url({{postImage}});">
     </div>
-    <input type="text">
-    <textarea></textarea>
+    <form (submit)="submit()">
+        <p>title</p>
+        <input type="text" class="title" [(ngModel)]="title" name="title">
+        <p>image URL</p>
+        <input type="text" [(ngModel)]="postImage" class="image"  name="postImage">
+        <textarea class="article" [(ngModel)]="article"  name="article"></textarea>
+        <button>Add post</button>
+    </form>
+
 </div>

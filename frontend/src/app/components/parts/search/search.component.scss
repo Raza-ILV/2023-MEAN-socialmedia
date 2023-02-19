@@ -26,6 +26,14 @@ button{
     width: 4vh;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
+    transition-duration: 200ms;
+}
+button:hover{
+    opacity: 0.8;
+    transition-duration: 200ms;
+}
+button:active{
+    scale: 0.9;
 }
 mat-icon{
     color: var(--color2);

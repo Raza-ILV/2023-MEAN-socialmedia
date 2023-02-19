@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ValidationService } from 'src/app/services/validation.service';
 
 @Component({
   selector: 'app-add-post',
@@ -6,9 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-post.component.scss']
 })
 export class AddPostComponent {
-  post = {
-    title: "",
-    article: "",
-    postImage: "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg"
+  constructor(private validation: ValidationService){}
+  title: string
+  article: string
+  postImage: string
+  submit(){
+    const post = {
+      title: this.title,
+      article: this.article,
+      postImage: this.postImage
+    }
+    if(!this.validation.validateAddPost(post)){
+      // Make beautifull then
+      alert("Fill all of the fields")
+      console.log("title: " + post.title)
+      console.log("article: " + post.article)
+    }
   }
 }

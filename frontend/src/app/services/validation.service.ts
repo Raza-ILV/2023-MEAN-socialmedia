@@ -15,7 +15,7 @@ export class ValidationService {
       return true
     }
   }
-  validateAddPost(post:News){
+  validateAddPost(post:any){
     if(!post.title || !post.article){
       return false
     } else {
