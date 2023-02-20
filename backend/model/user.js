@@ -37,14 +37,22 @@ module.exports.addUser = function(newUser, callback){
             if(err){throw err}
             newUser.password = hash
             newUser.save(callback)
+            console.log("---> User added")
         })
     })
-    console.log("---> User added")
+    
 }
 module.exports.comparePassword = function(candidatePassword, hash, callback){
     bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
         if(err){throw err}
         callback(null, isMatch)
+        console.log("---> Password match: " + isMatch)
+        if(isMatch) {
+            console.log("---> User logged in")
+        } else {
+            console.log("---> User log in failed")
+        }
+        
     })
-    console.log("---> User logged in")
+    
 }

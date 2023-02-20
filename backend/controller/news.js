@@ -10,9 +10,9 @@ router.post("/add-post", (req, res, next) => {
         authorName: req.body.authorName,
         authorImage: req.body.authorImage,
         title: req.body.title,
-        likes: req.body.likes,
+        likes: 0,
         article: req.body.article,
-        comments: req.body.comments
+        comments: []
     })
     Post.addPost(newPost, (err, post) => {
         if(err){res.json({success: false, msg: "Faileg to add post"})}

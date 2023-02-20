@@ -8,7 +8,8 @@ import { News } from 'src/app/shared/models/News';
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.scss']
 })
-export class NewsComponent {
+export class NewsComponent{
+
   news:News[] = []
   constructor(
     private newsService: NewsService,

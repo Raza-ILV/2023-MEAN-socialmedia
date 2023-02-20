@@ -7,7 +7,7 @@
     <a routerLink="/users/profile" class="nav-link" *ngIf="loggedIn">profile</a>
     <a routerLink="/news/add-post" class="nav-link" *ngIf="loggedIn">add post</a>
     <a routerLink="/news" class="nav-link news-btn" *ngIf="loggedIn">news</a>
-    <a routerLink="/news" class="nav-link" *ngIf="loggedIn">log out</a>
+    <a href="/users/auth" class="nav-link" *ngIf="loggedIn" (click)="logOut()">log out</a>
     <div class="theme-control" (click)="showThemes()">
         <a *ngIf="!themes"><mat-icon>brightness_medium</mat-icon></a>
         <div class="themes" *ngIf="themes">

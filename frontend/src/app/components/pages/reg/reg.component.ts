@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { ValidationService } from 'src/app/services/validation.service';
 
 
@@ -8,7 +10,11 @@ import { ValidationService } from 'src/app/services/validation.service';
   styleUrls: ['./reg.component.scss']
 })
 export class RegComponent implements OnInit{
-  constructor(private validate: ValidationService){}
+  constructor(
+    private validate: ValidationService,
+    private auth: AuthService,
+    private router: Router
+    ){}
 
   username:string
   password:string
@@ -34,6 +40,18 @@ export class RegComponent implements OnInit{
       console.log("Fill all of the fields")
       //make beautifull later
       alert("Fill all of the fields")
+    } else {
+      this.auth.registerUser(user).subscribe((data:string) => {
+        let temp = JSON.parse(data)
+        if(temp.success){ 
+          console.log("User was added")
+          this.router.navigate(["/users/auth"])
+        } else {
+          console.log("User registration error")
+          this.router.navigate(["/users/register"])
+        }
+      })
     }
+
   }
 }

@@ -13,6 +13,7 @@
             type="text" 
             [(ngModel)]="username" 
             name="username"
+            autocomplete="on"
             placeholder="Username...">
       </div>
       <div class="form-group">
@@ -30,6 +31,7 @@
             type="text" 
             [(ngModel)]="imageURL" 
             name="imageURL" 
+            autocomplete="on"
             placeholder="User picture... (Optional)"
             (ngModelChange)="inputChange()"
             >

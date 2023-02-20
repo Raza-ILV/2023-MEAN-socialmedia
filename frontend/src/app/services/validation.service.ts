@@ -22,5 +22,12 @@ export class ValidationService {
       return true
     }
   }
+  validateAuth(user:any){
+    if(!user.username || !user.password){
+      return false
+    } else {
+      return true
+    }
+  }
   
 }
