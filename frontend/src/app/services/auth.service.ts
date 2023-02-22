@@ -9,12 +9,12 @@ export class AuthService {
   authToken: any
   user: any
   baseURI = "http://localhost:3000"
-  headers = new HttpHeaders().set("Content-Type", "application/json")
   constructor(private http: HttpClient) { }
 
-  registerUser(user:any){ 
+  registerUser(user:any){
+    let headers = new HttpHeaders().set('Content-Type', 'application/json')
     return this.http
-    .post(this.baseURI + "/users/register", user, {headers: this.headers})
+    .post(this.baseURI + "/users/register", user, {headers: headers})
     .pipe(map(res => {
       console.log(res)
       return JSON.stringify(res)
@@ -22,8 +22,20 @@ export class AuthService {
   }
 
   authUser(user:any){
+    let headers = new HttpHeaders().set('Content-Type', 'application/json')
     return this.http
-    .post(this.baseURI + "/users/auth", user, {headers: this.headers})
+    .post(this.baseURI + "/users/auth", user, {headers: headers})
+    .pipe(map(res => {
+      console.log(res)
+      return JSON.stringify(res)
+    }))
+  }
+
+  getProfile(){
+    let temp:any = localStorage.getItem("id_token")
+    let headers = new HttpHeaders().set('Authorization', temp)
+    return this.http
+    .get(this.baseURI + "/users/profile", {headers: headers})
     .pipe(map(res => {
       console.log(res)
       return JSON.stringify(res)
@@ -40,7 +52,6 @@ export class AuthService {
   logOut(){
     this.authToken = null
     this.user = null
-    localStorage.removeItem("id_token")
-    localStorage.removeItem("user")
+    localStorage.clear()
   }
 }

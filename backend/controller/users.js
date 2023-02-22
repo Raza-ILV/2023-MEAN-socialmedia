@@ -11,8 +11,7 @@ router.post("/register", (req, res, next) => {
     let newUser = new User({
         username: req.body.username,
         password: req.body.password,
-        imageURL: req.body.imageURL,
-        posts: [],
+        imageURL: req.body.imageURL
     })
     User.addUser(newUser, (err, user) => {
         if(err){res.json({success: false, msg: "Faileg to registrate user"})}
@@ -58,4 +57,5 @@ router.post("/auth", (req, res, next) => {
 router.get("/profile", passport.authenticate("jwt", {session: false}), (req, res, next) => {
     res.json({user: req.user})
 })
+
 module.exports = router

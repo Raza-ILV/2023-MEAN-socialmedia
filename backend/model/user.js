@@ -15,11 +15,7 @@ const UserSchema = mongoose.Schema({
         type: String,
         default: "https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg",
         required: true
-    },
-    posts: {
-        type: [String],
-        required: true
-    },
+    }
 })
 
 const User = module.exports = mongoose.model("User", UserSchema)
@@ -41,6 +37,9 @@ module.exports.addUser = function(newUser, callback){
         })
     })
     
+}
+module.exports.editUser = function(newUser, callback){
+    newUser.save(callback)
 }
 module.exports.comparePassword = function(candidatePassword, hash, callback){
     bcrypt.compare(candidatePassword, hash, (err, isMatch) => {

@@ -16,13 +16,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { SearchComponent } from './components/parts/search/search.component';
 import { PostComponent } from './components/pages/post/post.component';
 import { AuthComponent } from './components/pages/auth/auth.component';
 import { RegComponent } from './components/pages/reg/reg.component';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +34,6 @@ import { HttpClientModule } from '@angular/common/http';
     AddPostComponent,
     ErrorComponent,
     ProfileComponent,
-    SearchComponent,
     PostComponent,
     AuthComponent,
     RegComponent,
@@ -50,7 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatCardModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

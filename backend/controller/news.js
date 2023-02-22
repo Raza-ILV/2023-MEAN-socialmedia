@@ -20,7 +20,10 @@ router.post("/add-post", (req, res, next) => {
     })
 })
 router.get("", (req, res, next) => {
-    res.send("news")
+    Post.find({}, (err, data) => {
+        res.json({posts: data})
+    })
+    
 })
 router.put("/:id", (req, res, next) => {
     Post.getPostById(req.params.id, (err, post) => {

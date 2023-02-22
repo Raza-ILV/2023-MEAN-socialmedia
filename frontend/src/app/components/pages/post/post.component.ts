@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { NewsService } from 'src/app/services/news.service';
 import { News } from 'src/app/shared/models/News';
 
 @Component({
@@ -10,14 +8,5 @@ import { News } from 'src/app/shared/models/News';
 })
 export class PostComponent {
   post!: News
-  constructor(
-    private activatedRout: ActivatedRoute,
-    private newsService:NewsService
-  ){
-    activatedRout.params.subscribe((params) => {
-      if(params.id){
-        this.post = newsService.getById(params.id)
-      }
-    })
-  }
+  constructor(){}
 }
