@@ -7,17 +7,19 @@ import { NewsComponent } from './components/pages/news/news.component';
 import { PostComponent } from './components/pages/post/post.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { RegComponent } from './components/pages/reg/reg.component';
+import { AuthGuard } from './guards/auth.guard';
+import { LogOutGuard } from './guards/log-out.guard';
 
 const routes: Routes = [
   {path: "", redirectTo: "home", pathMatch: "full"},
   {path: "home", component: HomeComponent},
-  {path: "search/:search", component:NewsComponent},
-  {path: "news", component: NewsComponent},
-  {path: "news/add-post", component: AddPostComponent},
-  {path: "news/:id", component: PostComponent},
-  {path: "users/profile", component: ProfileComponent},
-  {path: "users/auth", component: AuthComponent},
-  {path: "users/register", component: RegComponent},
+  {path: "news", component: NewsComponent, canActivate: [AuthGuard]},
+  {path: "news/add-post", component: AddPostComponent, canActivate: [AuthGuard]},
+  {path: "news/:id", component: PostComponent, canActivate: [AuthGuard]},
+  {path: "users/profile", component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: "users/auth", component: AuthComponent, canActivate: [LogOutGuard]},
+  {path: "users/register", component: RegComponent, canActivate: [LogOutGuard]},
+  {path: "**", component: HomeComponent},
 ];
 
 @NgModule({

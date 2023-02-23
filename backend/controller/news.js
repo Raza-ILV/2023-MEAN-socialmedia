@@ -38,14 +38,8 @@ router.put("/:id", (req, res, next) => {
         if(err){throw err}
         else{
             let oldArr = post.comments
-            console.log("---old---")
-            console.log(oldArr)
             let newData = [req.body.comments]
-            console.log("---new---")
-            console.log(newData)
             let newArr = oldArr.concat(newData)
-            console.log("---full---")
-            console.log(newArr)
             Post.findOneAndUpdate({_id: req.params.id}, {
                 $set: {
                     comments: newArr

@@ -1,8 +1,7 @@
 <div class="main">
-    <mat-card class="main-card">a</mat-card>
-    <mat-card class="posts-card">
-        <div *ngFor="let p of user.posts">
-            a
-        </div>
+    <mat-card class="main-card">
+        <div class="image item" style="background-image: url({{user.imageURL}});"></div>   
+        <p class="username-data item">{{user.username}}</p>
+        <p class="username-id item">ID: {{user._id}}</p>
     </mat-card>
 </div>

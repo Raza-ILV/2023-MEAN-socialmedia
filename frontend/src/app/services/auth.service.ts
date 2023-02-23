@@ -52,6 +52,7 @@ export class AuthService {
   logOut(){
     this.authToken = null
     this.user = null
-    localStorage.clear()
+    localStorage.removeItem("user")
+    localStorage.removeItem("id_token")
   }
 }

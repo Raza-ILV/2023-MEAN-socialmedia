@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit{
 
   ngOnInit(){
     this.user = this.auth.getProfile().subscribe({
-      next: (data) => {this.user = JSON.parse(data)},
+      next: (data) => {this.user = JSON.parse(data).user},
       error: (err) => {console.log(err)},
     })
   }
