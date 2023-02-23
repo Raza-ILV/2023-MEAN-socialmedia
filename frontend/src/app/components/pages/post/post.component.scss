@@ -44,7 +44,7 @@ p{
     height: 5vh;
     color: var(--color1);
 }.comments p, .likes p{
-    margin: 0px 10px 0px 0px;
+    margin: 0px 10px 0px 10px;
 }
 .divider{
     width: 85%;
@@ -93,6 +93,7 @@ p{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     margin: 3px 0px 10px 0px;
 }
 .add-comment textarea{
@@ -105,4 +106,23 @@ p{
     border-radius: 3px;
     border: 1px solid var(--color1);
     padding: 1%;
+}
+.add-comment button{
+    width: 80.3%;
+    height: 5vh;
+    margin: 5px;
+    background-color: var(--color1);
+    outline: none;
+    border: 1px solid var(--color2);
+    border-radius: 3px;
+    color: var(--color2);
+    transition-duration: 300ms;
+}
+.add-comment button:hover{
+    opacity: 0.8;
+    transition-duration: 300ms;
+}
+.add-comment button:active{
+    opacity: 0.4;
+    transition-duration: 300ms;
 }

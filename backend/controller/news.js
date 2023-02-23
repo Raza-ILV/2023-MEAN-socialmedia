@@ -9,8 +9,8 @@ router.post("/add-post", (req, res, next) => {
     let newPost = new Post({
         authorName: req.body.authorName,
         authorImage: req.body.authorImage,
+        postImage: req.body.postImage,
         title: req.body.title,
-        likes: 0,
         article: req.body.article,
         comments: []
     })
@@ -25,24 +25,36 @@ router.get("", (req, res, next) => {
     })
     
 })
+router.get("/:id", (req, res, next) => {
+    Post.getPostById(req.params.id, (err, post) => {
+        if(err) throw err
+        else{
+            res.json({data: post})
+        }
+    })
+})
 router.put("/:id", (req, res, next) => {
     Post.getPostById(req.params.id, (err, post) => {
         if(err){throw err}
         else{
+            let oldArr = post.comments
+            console.log("---old---")
+            console.log(oldArr)
+            let newData = [req.body.comments]
+            console.log("---new---")
+            console.log(newData)
+            let newArr = oldArr.concat(newData)
+            console.log("---full---")
+            console.log(newArr)
             Post.findOneAndUpdate({_id: req.params.id}, {
                 $set: {
-                    likes: post.likes + req.body.likes,
-                    comments: req.body.comments.concat(post.comments)
+                    comments: newArr
                 }
             }).then(() => {
                 res.json({success: true, msg: "Comment added"})
             }).catch(err => {
                 console.error(err);
-                res.status(500)
-                    .json({
-                        success: false,
-                        msg: "Failed to add comment"
-                    })
+                res.status(500).json({success: false, msg: "Failed to add comment"})
             }) 
         }
     })

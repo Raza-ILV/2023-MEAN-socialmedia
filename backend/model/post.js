@@ -10,12 +10,12 @@ const PostSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    title: {
+    postImage: {
         type: String,
         required: true
     },
-    likes: {
-        type: Number,
+    title: {
+        type: String,
         required: true
     },
     article: {
@@ -23,7 +23,11 @@ const PostSchema = mongoose.Schema({
         required: true
     },
     comments: {
-        type: [[String]],
+        type: [{
+            author: String,
+            img: String,
+            text: String
+        }],
         required: true
     },
 })

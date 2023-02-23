@@ -1,6 +1,6 @@
 <div class="main">
     <div class="post" *ngFor="let post of news">
-        <a routerLink="/news/{{post.id}}">
+        <a routerLink="/news/{{post._id}}">
             <div class="body">
                 <p class="title">{{post.title}}</p>
                 <p class="article">{{post.article}}</p>
@@ -16,11 +16,7 @@
                 <div class="short-info">
                     <div class="comments">
                         <mat-icon>comment</mat-icon>
-                        <p class="likes">{{post.commentsCount}}</p>
-                    </div>
-                    <div class="likes">
-                        <mat-icon>favorite</mat-icon>
-                        <p class="likes">{{post.likes}}</p>
+                        <p class="likes">{{post.comments.length}}</p>
                     </div>
                 </div>
 

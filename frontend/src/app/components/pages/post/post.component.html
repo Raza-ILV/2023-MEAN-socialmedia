@@ -7,22 +7,20 @@
     <p class="article">{{post.article}}</p>
     <div class="info">
         <a class="comments">
+            <mat-icon>comments</mat-icon>
             <p>Comments</p>
             <mat-icon>comments</mat-icon>
-        </a>
-        <a class="likes">
-            <p>Likes</p>
-            <mat-icon>favorite</mat-icon>
         </a>
     </div>
     <div class="divider"></div>
     <div *ngFor="let comment of post.comments" class="com">
-        <div class="comment-img" style="background-image: url({{comment[1]}});"></div>
-        <p class="comment-name">{{comment[0]}}:</p>
-        <p class="comment-article">{{comment[2]}}</p>
+        <div class="comment-img" style="background-image: url({{comment.img}});"></div>
+        <p class="comment-name">{{comment.author}}:</p>
+        <p class="comment-article">{{comment.text}}</p>
     </div>
     <p class="leave-comment">Leave your comment:</p>
-    <div class="add-comment">
-        <textarea></textarea>
-    </div>
+    <form class="add-comment" onsubmit="submit()">
+        <textarea [(ngModel)]="commentArticle" name="commentArticle"></textarea>
+        <button type="submit" (click)="submit()">Add comment</button>
+    </form>
 </div>
