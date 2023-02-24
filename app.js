@@ -25,7 +25,7 @@ mongoose.connection.on("error", (err) => {
 })
 
 app.use(session({
-    secret: 'riven is op change my mind',
+    secret: db.secret,
     resave: false,
     saveUninitialized: true,
     cookie: { secure: true }

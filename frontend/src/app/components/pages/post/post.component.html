@@ -14,7 +14,9 @@
     </div>
     <div class="divider"></div>
     <div *ngFor="let comment of post.comments" class="com">
-        <div class="comment-img" style="background-image: url({{comment.img}});"></div>
+        <div class="comment-img">
+            <div class="sam-img" style="background-image: url({{comment.img}});"></div>
+        </div>
         <p class="comment-name">{{comment.author}}:</p>
         <p class="comment-article">{{comment.text}}</p>
     </div>
