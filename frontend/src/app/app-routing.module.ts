@@ -11,8 +11,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { LogOutGuard } from './guards/log-out.guard';
 
 const routes: Routes = [
-  {path: "", redirectTo: "home", pathMatch: "full"},
-  {path: "home", component: HomeComponent},
+  {path: "", redirectTo: "news", pathMatch: "full"},
+  {path: "home", redirectTo: "news", pathMatch: "full"},
   {path: "news", component: NewsComponent, canActivate: [AuthGuard]},
   {path: "news/add-post", component: AddPostComponent, canActivate: [AuthGuard]},
   {path: "news/:id", component: PostComponent, canActivate: [AuthGuard]},

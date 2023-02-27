@@ -10,7 +10,7 @@ const db = require("./backend/model/database")
 const session = require('express-session')
 
 const app = express()
-const port = 3000
+const port = process.env.port || 3000
 const corsOptions ={
     origin:'http://localhost:4200', 
     credentials:true,

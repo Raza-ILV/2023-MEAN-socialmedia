@@ -23,7 +23,6 @@ router.get("", (req, res, next) => {
     Post.find({}, (err, data) => {
         res.json({posts: data})
     })
-    
 })
 router.get("/:id", (req, res, next) => {
     Post.getPostById(req.params.id, (err, post) => {

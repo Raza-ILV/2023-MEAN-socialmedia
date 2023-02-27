@@ -30,7 +30,7 @@ const PostSchema = mongoose.Schema({
         }],
         required: true
     },
-})
+}, {collection: "PR2Posts"})
 
 const Post = module.exports = mongoose.model("Post", PostSchema)
 
